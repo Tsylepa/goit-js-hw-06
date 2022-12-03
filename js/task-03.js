@@ -13,14 +13,15 @@ const images = [
   },
 ];
 
-const gallery = document.querySelector(".gallery");
-gallery.style.display = "flex";
-gallery.style.listStyle = "none";
-gallery.style.gap = "10px";
+const createGallery = images.map((img) => {
+  const gallery = document.querySelector(".gallery");
 
-const createGallery = images.map((img) =>
+  gallery.style.display = "flex";
+  gallery.style.listStyle = "none";
+  gallery.style.gap = "10px";
+
   gallery.insertAdjacentHTML(
     "beforeend",
     `<li><img src="${img.url}" alt="${img.alt}" height="170"/></li>`
-  )
-);
+  );
+});
