@@ -16,7 +16,7 @@ refs.destroyBoxBtn.addEventListener("click", destroyBoxes);
 
 function createBoxes() {
   let boxSize = refs.initialBoxSize;
-  console.log(refs.qty);
+
   for (let i = 0; i < refs.qty.value; i += 1) {
     const box = document.createElement("div");
 
