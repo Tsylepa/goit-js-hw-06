@@ -15,19 +15,22 @@ refs.createBoxBtn.addEventListener("click", createBoxes);
 refs.destroyBoxBtn.addEventListener("click", destroyBoxes);
 
 function createBoxes() {
+  const boxArr = [];
   let boxSize = refs.initialBoxSize;
 
   for (let i = 0; i < refs.qty.value; i += 1) {
-    const box = document.createElement("div");
+    const boxColor = getRandomHexColor();
 
-    box.style.width = boxSize + "px";
-    box.style.height = boxSize + "px";
-    box.style.backgroundColor = getRandomHexColor();
-
-    boxes.appendChild(box);
+    boxArr.push(`<div style="
+    background-color: ${boxColor};
+    width: ${boxSize}px; 
+    height: ${boxSize}px;
+    "></div>`);
 
     boxSize += refs.boxSizeModificator;
   }
+
+  boxes.insertAdjacentHTML("beforeend", boxArr.join(""));
 }
 
 function destroyBoxes() {
