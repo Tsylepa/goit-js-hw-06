@@ -4,7 +4,7 @@ const validLength = input.dataset.length;
 input.addEventListener("blur", validation);
 
 function validation() {
-  if (this.value.length == validLength) {
+  if (this.value.length === Number(validLength)) {
     this.classList?.remove("invalid");
     this.classList.add("valid");
   } else {
